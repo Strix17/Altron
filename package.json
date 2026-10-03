@@ -1,0 +1,17 @@
+{
+  "name": "altron-ui",
+  "version": "1.0.0",
+  "description": "Altron AI Desktop Assistant — Remastered Futuristic HUD UI",
+  "main": "src-ui/index.html",
+  "scripts": {
+    "tauri": "tauri",
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.0.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.0.0"
+  }
+}

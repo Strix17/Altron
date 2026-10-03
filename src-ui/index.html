@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALTRON // AI DESKTOP ASSISTANT</title>
+  <link rel="icon" type="image/png" href="altron_logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hud-background-grid"></div>
+  <div class="hud-scanline"></div>
+
+  <!-- Main HUD Shell -->
+  <div class="app-container">
+    <!-- Top Minimalist Navbar -->
+    <header class="top-nav">
+      <div class="brand-group">
+        <img src="altron_logo.png" class="brand-avatar-img" alt="Altron Logo">
+        <span class="brand-logo">ALTRON</span>
+        <span class="brand-tag">// QUANTUM NEURAL WORKSPACE</span>
+      </div>
+
+      <div class="top-center-telemetry">
+        <div class="metric-chip">
+          <span class="metric-label">SYS UPTIME</span>
+          <span class="metric-val" id="sys-uptime">00:00:00</span>
+        </div>
+        <div class="metric-chip">
+          <span class="metric-label">FPS TARGET</span>
+          <span class="metric-val">30 FPS</span>
+        </div>
+      </div>
+
+      <div class="status-badge" id="status-badge">
+        <span class="status-dot"></span>
+        <span class="status-text" id="status-text">ONLINE</span>
+      </div>
+    </header>
+
+    <!-- 3-Column HUD Grid -->
+    <main class="hud-grid">
+      <!-- Left Panel: Telemetry & Logs -->
+      <section class="hud-panel telemetry-panel">
+        <div class="panel-header">
+          <div class="panel-title">SYSTEM TELEMETRY</div>
+          <div class="panel-subtitle">LIVE ACTION LOGS &amp; DIAGNOSTICS</div>
+        </div>
+        <div class="terminal-body" id="telemetry-log">
+          <div class="log-entry sys"><span class="timestamp">[SYS]</span> Altron core initialized.</div>
+          <div class="log-entry sys"><span class="timestamp">[MIC]</span> Voice engine ready. Click MIC to speak.</div>
+        </div>
+      </section>
+
+      <!-- Center Panel: 3D Animated JARVIS Hologram Core -->
+      <section class="hud-panel hologram-panel">
+        <div class="panel-header center-align">
+          <div class="panel-title glow-text">NEURAL INTERFACE CONSTRUCT</div>
+          <div class="panel-subtitle">JARVIS 3D HOLOGRAPHIC QUANTUM CORE</div>
+        </div>
+
+        <div class="canvas-wrapper">
+          <canvas id="jarvis-canvas"></canvas>
+          <div class="core-reticle"></div>
+        </div>
+
+        <div class="core-footer-pill">
+          <span class="pulse-indicator"></span>
+          <span class="core-mode-label" id="core-mode-text">IDLE // AWAITING COMMAND</span>
+        </div>
+      </section>
+
+      <!-- Right Panel: Conversation Stream -->
+      <section class="hud-panel chat-panel">
+        <div class="panel-header">
+          <div class="panel-title">CONVERSATION STREAM</div>
+          <div class="panel-subtitle">GROQ INTENT ENGINE &amp; MEMORY</div>
+        </div>
+        <div class="chat-body" id="chat-stream">
+          <div class="chat-bubble altron">
+            <span class="speaker-tag">◆ ALTRON</span>
+            <div class="bubble-content">Systems ready. What can I help you with today, sir?</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Input Dock -->
+    <footer class="input-dock">
+      <div class="input-bar-container">
+        <input 
+          type="text" 
+          id="cmd-input" 
+          placeholder="Enter a command, research request, or query..." 
+          autocomplete="off"
+        />
+        <button id="btn-mic" class="hud-btn btn-mic" title="Voice Input">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+            <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+            <line x1="12" y1="19" x2="12" y2="22"/>
+          </svg>
+          <span>MIC</span>
+        </button>
+        <button id="btn-send" class="hud-btn btn-send" title="Send Command">
+          <span>SEND</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+          </svg>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="jarvis_core.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

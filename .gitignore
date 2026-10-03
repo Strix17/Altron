@@ -1,0 +1,30 @@
+# Secrets & Settings
+.env
+.env.local
+*.key
+
+# Virtual Environment & Python
+.venv/
+venv/
+ENV/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Node & Frontend / Tauri
+node_modules/
+src-tauri/target/
+dist/
+build/
+
+# Local Logs & History
+logs/history.jsonl
+logs/*.log
+
+# OS & IDE Junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
